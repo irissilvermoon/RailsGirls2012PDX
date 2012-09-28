@@ -1,0 +1,27 @@
+<h1>Listing mfnws</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>Picture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mfnws.each do |mfnw| %>
+  <tr>
+    <td><%= mfnw.name %></td>
+    <td><%= mfnw.genre %></td>
+    <td><%= mfnw.picture %></td>
+    <td><%= link_to 'Show', mfnw %></td>
+    <td><%= link_to 'Edit', edit_mfnw_path(mfnw) %></td>
+    <td><%= link_to 'Delete', mfnw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mfnw', new_mfnw_path %>
